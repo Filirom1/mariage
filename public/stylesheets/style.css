@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.left,
+.right,
+.col {
+  display: inline-block;
+  vertical-align: text-top;
+}
+.left {
+  width: 62%;
+}
+.right {
+  width: 38%;
+  height: 100%;
+  padding: 10px;
+}
+.col {
+  color: #82888a;
+  width: 50%;
+  padding: 10px;
+}
+.col img {
+  max-width: 100%;
+  height: auto;
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: 0.5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: 0.5s ease-in-out;
+}
+.col.grayscale img {
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-filter: grayscale(100%);
+  -moz-transition: 0.5s ease-in-out;
+  -o-filter: grayscale(100%);
+  -o-transition: 0.5s ease-in-out;
+}
+.name {
+  font-size: 16px;
+  line-height: 17.6px;
+  color: #565a5c;
+}
+.booking {
+  height: 40px;
+}
+#map {
+  width: 100%;
+  height: 630px;
+  max_height: 100%;
+}
