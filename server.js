@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('./app');
 var debug = require('debug')('mariage:server');
 var http = require('http');
 
@@ -12,7 +12,8 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var ip = process.env['IP'] || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var port = process.env['PORT'] || process.env.OPENSHIFT_NODEJS_PORT || '3000';
 app.set('port', port);
 
 /**
@@ -25,7 +26,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, ip);
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -86,5 +87,5 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }
