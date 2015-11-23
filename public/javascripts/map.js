@@ -52,6 +52,7 @@ function addMarker(id, location, map, icon) {
   $(".col." + id).data('marker', marker)
   marker.addListener('click', function(){
     calculateAndDisplayRoute(location);
+    $(".col." + id + " .card img").click()
   });
 
   return marker;
