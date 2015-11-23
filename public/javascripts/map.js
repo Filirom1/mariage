@@ -1,6 +1,6 @@
 (function(){
 var fontanes = { lat: 45.5450756, lng: 4.4311971 };
-var gite = { lat: 45.5345948, lng: 4.4345582 };
+var gite = { lat: 45.5441883, lng: 4.4837727 };
 var f1 = { lat: 45.5040887, lng: 4.563365 };
 var ibis = { lat: 45.4671061, lng: 4.3754981 };
 var church = { lat: 45.4798278, lng: 4.4274113 };
@@ -51,7 +51,6 @@ function addMarker(id, location, map, icon) {
   $(".col." + id).data('location', location)
   $(".col." + id).data('marker', marker)
   marker.addListener('click', function(){
-    calculateAndDisplayRoute(location);
     $(".col." + id + " .card img").click()
   });
 
@@ -79,6 +78,11 @@ $(".card img, .card .side-b").click(function() {
 
   $(this).parents('.card').addClass("flipped");
   var location = $(this).parents('.col').data('location')
+
+  if($(this).parents('.col').hasClass('fontanes')){
+    return
+  }
+
   calculateAndDisplayRoute(location);
   $("#directions").detach().appendTo($(this).parents('.col').find('.side-b'));
 });
