@@ -48,6 +48,7 @@ function addMarker(id, location, map, icon) {
     icon:icon
   });
 
+  $(".col." + id).data('location', location)
   $(".col." + id).data('marker', marker)
   marker.addListener('click', function(){
     calculateAndDisplayRoute(location);
@@ -65,8 +66,20 @@ $(".col").hover(function() {
   $(this).siblings().removeClass("grayscale");
   if($(this).data("marker")) {
     $(this).data("marker").setAnimation(null);
-    resetMap();
   }
+});
+
+$(".card img, .card .side-b").click(function() {
+  var isFlipped = $(this).parents('.card').hasClass('flipped')
+  $('.card').removeClass("flipped");
+  if(isFlipped){
+    return resetMap()
+  }
+
+  $(this).parents('.card').addClass("flipped");
+  var location = $(this).parents('.col').data('location')
+  calculateAndDisplayRoute(location);
+  $("#directions").detach().appendTo($(this).parents('.col').find('.side-b'));
 });
 
 function calculateAndDisplayRoute(destination) {

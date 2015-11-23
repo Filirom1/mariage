@@ -18,24 +18,53 @@ body {
 .right {
   width: 38%;
   height: 100%;
-  padding: 10px;
+  padding-left: 5px;
 }
 .col {
   color: #82888a;
   width: 50%;
-  padding: 10px;
-}
-.col img {
-  max-width: 100%;
-  height: auto;
+  height: 330px;
   -webkit-filter: grayscale(0%);
   -webkit-transition: 0.5s ease-in-out;
   -moz-filter: grayscale(0%);
   -moz-transition: 0.5s ease-in-out;
   -o-filter: grayscale(0%);
   -o-transition: 0.5s ease-in-out;
+  position: relative;
+  perspective: 800px;
 }
-.col.grayscale img {
+.col .card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.col .side-a,
+.col .side-b {
+  padding: 0 5px 10px 5px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.col .card.flipped {
+  transform: rotateY(180deg);
+}
+.col .side-b {
+  transform: rotateY(180deg);
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.col img {
+  max-width: 100%;
+  height: auto;
+}
+.col img hover {
+  cursor: pointer;
+}
+.col.grayscale {
   -webkit-filter: grayscale(100%);
   -webkit-transition: 0.5s ease-in-out;
   -moz-filter: grayscale(100%);
@@ -57,4 +86,7 @@ body {
   width: 100%;
   height: 630px;
   max_height: 100%;
+}
+#directions {
+  background: #f7f7f7;
 }

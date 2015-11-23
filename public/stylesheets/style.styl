@@ -1,5 +1,6 @@
-grey_dark = rgb(86, 90, 92)
-grey_light = rgb(130, 136, 138)
+gray_dark = rgb(86, 90, 92)
+gray_light = rgb(130, 136, 138)
+gray_background =  rgb(247, 247, 247)
 
 *
   box-sizing border-box
@@ -19,25 +20,54 @@ body
 .right
   width 38%
   height 100%
-  padding 10px
+  padding-left 5px
 
 .col
-  color grey_light
+  color gray_light
   width 50%
-  padding 10px
+  height  330px
+
+  -webkit-filter grayscale(0%)
+  -webkit-transition .5s ease-in-out
+  -moz-filter grayscale(0%)
+  -moz-transition .5s ease-in-out
+  -o-filter grayscale(0%)
+  -o-transition .5s ease-in-out
+
+  position  relative
+  perspective  800px
+
+  .card
+    width  100%
+    height  100%
+    position absolute
+    transform-style  preserve-3d
+    transition  transform 1s
+
+  .side-a, .side-b
+    padding 0 5px 10px 5px
+    display  block
+    position  absolute
+    width  100%
+    height  100%
+    backface-visibility  hidden
+
+  .card.flipped
+    transform  rotateY( 180deg )
+
+  .side-b
+    transform  rotateY( 180deg )
+    background  gray_background
+    cursor pointer
 
   img
     max-width 100%
     height auto
 
-    -webkit-filter grayscale(0%)
-    -webkit-transition .5s ease-in-out
-    -moz-filter grayscale(0%)
-    -moz-transition .5s ease-in-out
-    -o-filter grayscale(0%)
-    -o-transition .5s ease-in-out
+  img hover
+    cursor pointer
 
-.col.grayscale img
+.col.grayscale
   -webkit-filter grayscale(100%)
   -webkit-transition .5s ease-in-out
   -moz-filter grayscale(100%) 
@@ -48,7 +78,7 @@ body
 .name
   font-size 16px
   line-height 17.6px
-  color grey_dark
+  color gray_dark
   padding 3px 0
   font-weight bold
 
@@ -60,3 +90,5 @@ body
   height 630px
   max_height 100%
 
+#directions
+  background  gray_background
