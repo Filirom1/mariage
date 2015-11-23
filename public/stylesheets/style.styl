@@ -8,7 +8,14 @@ gray_background =  rgb(247, 247, 247)
   -webkit-box-sizing border-box
 
 body
-  font 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  font 14px  Cookie, Arial, Helvetica, sans-serif;
+
+#main
+  max-width: 1515px;
+  margin: 0 auto; 
+
+h1
+  color gray_dark
 
 .left, .right, .col
   display inline-block
@@ -34,6 +41,8 @@ body
   -moz-transition .5s ease-in-out
   -o-filter grayscale(0%)
   -o-transition .5s ease-in-out
+  filter grayscale(0%)
+  transition .5s ease-in-out
 
   position  relative
   perspective  800px
@@ -75,6 +84,8 @@ body
   -moz-transition .5s ease-in-out
   -o-filter grayscale(100%) 
   -o-transition .5s ease-in-out
+  filter grayscale(100%) 
+  transition .5s ease-in-out
 
 .name
   font-size 16px
@@ -96,5 +107,9 @@ body
 
 
 @media screen and (orientation : portrait) 
+  .left, .right
+    width 100%
+
+@media screen and (max-width : 800px) 
   .left, .right
     width 100%

@@ -8,6 +8,7 @@ var church = { lat: 45.4798278, lng: 4.4274113 };
 var map;
 var directionsService;
 var directionsDisplay;
+var isTouch = false;
 
 // In the following example, markers appear when the user clicks on the map.
 // Each marker is labeled with a single alphabetical character.
@@ -57,19 +58,19 @@ function addMarker(id, location, map, icon) {
   return marker;
 }
 
-if(! is_touch_device){
-  $(".col").hover(function() {
-    $(this).siblings().addClass("grayscale");
-    if($(this).data("marker")){
-      $(this).data("marker").setAnimation(google.maps.Animation.BOUNCE);
-    }
-  }, function() {
-    $(this).siblings().removeClass("grayscale");
-    if($(this).data("marker")) {
-      $(this).data("marker").setAnimation(null);
-    }
-  });
-}
+$(".col").hover(function() {
+  if(isTouch) return
+  $(this).siblings().addClass("grayscale");
+  if($(this).data("marker")){
+    $(this).data("marker").setAnimation(google.maps.Animation.BOUNCE);
+  }
+}, function() {
+  if(isTouch) return
+  $(this).siblings().removeClass("grayscale");
+  if($(this).data("marker")) {
+    $(this).data("marker").setAnimation(null);
+  }
+});
 
 $(".card img, .card .side-b").click(function() {
   var isFlipped = $(this).parents('.card').hasClass('flipped')
@@ -103,17 +104,8 @@ function calculateAndDisplayRoute(destination) {
   });
 }
 
-function is_touch_device() {
- var bool;
-  if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-    bool = true;
-  } else {
-    var query = ['@media (', prefixes.join('touch-enabled),('), 'heartz', ')', '{#modernizr{top:9px;position:absolute}}'].join('');
-    testStyles(query, function(node) {
-      bool = node.offsetTop === 9;
-    });
-  }
-  return bool;
-}
+$(document).bind('touchstart', function(){
+  isTouch = true;
+});
 
 })()

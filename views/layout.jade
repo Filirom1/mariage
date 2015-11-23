@@ -3,6 +3,15 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/header-basic-light.css')
     script(src='//code.jquery.com/jquery-1.11.3.min.js')
-  body
-    block content
+  bodportraity
+    #main
+      header.header-basic-light
+        .header-limiter
+          h1
+            a Mariage de Coco et Roro
+          nav
+            a Ou dormir
+            a Information sur le mariage
+      block content
