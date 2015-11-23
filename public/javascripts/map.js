@@ -15,7 +15,7 @@ window.initMap = function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 11,
-    center: fontanes
+    center: church
   });
 
   // Add a marker at the center of the map.
@@ -32,7 +32,7 @@ window.initMap = function initMap() {
 }
 
 function resetMap(){
-  map.setCenter(fontanes)
+  map.setCenter(church)
   map.setZoom(11)
   directionsDisplay.set("directions", null);
 }
