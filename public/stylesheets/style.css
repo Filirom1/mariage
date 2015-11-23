@@ -60,8 +60,6 @@ body {
 .col img {
   max-width: 100%;
   height: auto;
-}
-.col img hover {
   cursor: pointer;
 }
 .col.grayscale {
