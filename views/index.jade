@@ -3,25 +3,15 @@ extends layout
 block content
   .rooms
     .left
-      .col.fontanes
+      .col.ibis
         .card
           .side-a
-            img(src= "images/resize_cave.jpg")
-            .name Cave du Chateau de Fontanes
-            .address Chateau de Fontanes
-            .booking Pas de réservation, mais prévoyez juste un matelas gonflable + sac de couchage
-            .price 0€
-          .side-b
-            p Vous n'avez même pas besoin de prendre la voiture, vous logez sur place :-)
-            p Par contre n'oubliez pas votre matelas et votre sac de couchage.
-      .col.gite
-        .card
-          .side-a
-            img(src= "images/resize_gite.jpg")
-            .name Gite Communal de St Christo
-            .address Saint Christo en Jarez
-            .booking Si vous voulez réserver contactez Coco et Roro
-            .price 13€ par personne + 3,50€ de draps si besoin
+            img(src= "images/resize_ibis.jpg")
+            .name Hotel Ibis - La Terrasse
+            .address Ibis, 35 Place Massenet, 42000 Saint-Étienne
+            .booking 
+              a(href= "http://www.ibis.com/fr/hotel-0801-ibis-saint-etienne-la-terrasse/index.shtml") Reservation en ligne
+            .price 67€ la chambre
           .side-b
       .col.f1
         .card
@@ -33,16 +23,26 @@ block content
               a(href= "http://www.hotelf1.com/fr/hotel-2428-formule-1-hotelf1-saint-etienne-est-la-grand-croix/location.shtml") Reservation en ligne
             .price 36€ la chambre
           .side-b
-      .col.ibis
+      .col.gite
         .card
           .side-a
-            img(src= "images/resize_ibis.jpg")
-            .name Hotel Ibis - La Terrasse
-            .address Ibis, 35 Place Massenet, 42000 Saint-Étienne
-            .booking 
-              a(href= "http://www.ibis.com/fr/hotel-0801-ibis-saint-etienne-la-terrasse/index.shtml") Reservation en ligne
-            .price 67€ la chambre
+            img(src= "images/resize_gite.jpg")
+            .name Gite Communal de St Christo
+            .address Saint Christo en Jarez
+            .booking Si vous voulez réserver contactez Coco et Roro
+            .price 13€ par personne + 3,50€ de draps si besoin
           .side-b
+      .col.fontanes
+        .card
+          .side-a
+            img(src= "images/resize_cave.jpg")
+            .name Cave du Chateau de Fontanes
+            .address Chateau de Fontanes
+            .booking Pas de réservation, mais prévoyez juste un matelas gonflable + sac de couchage
+            .price 0€
+          .side-b
+            p Vous n'avez même pas besoin de prendre la voiture, vous logez sur place :-)
+            p Par contre n'oubliez pas votre matelas et votre sac de couchage.
     .right
       #map
       #directions
