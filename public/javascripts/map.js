@@ -57,17 +57,19 @@ function addMarker(id, location, map, icon) {
   return marker;
 }
 
-$(".col").hover(function() {
-  $(this).siblings().addClass("grayscale");
-  if($(this).data("marker")){
-    $(this).data("marker").setAnimation(google.maps.Animation.BOUNCE);
-  }
-}, function() {
-  $(this).siblings().removeClass("grayscale");
-  if($(this).data("marker")) {
-    $(this).data("marker").setAnimation(null);
-  }
-});
+if(! is_touch_device){
+  $(".col").hover(function() {
+    $(this).siblings().addClass("grayscale");
+    if($(this).data("marker")){
+      $(this).data("marker").setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }, function() {
+    $(this).siblings().removeClass("grayscale");
+    if($(this).data("marker")) {
+      $(this).data("marker").setAnimation(null);
+    }
+  });
+}
 
 $(".card img, .card .side-b").click(function() {
   var isFlipped = $(this).parents('.card').hasClass('flipped')
@@ -99,6 +101,19 @@ function calculateAndDisplayRoute(destination) {
       window.alert('Directions request failed due to ' + status);
     }
   });
+}
+
+function is_touch_device() {
+ var bool;
+  if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+    bool = true;
+  } else {
+    var query = ['@media (', prefixes.join('touch-enabled),('), 'heartz', ')', '{#modernizr{top:9px;position:absolute}}'].join('');
+    testStyles(query, function(node) {
+      bool = node.offsetTop === 9;
+    });
+  }
+  return bool;
 }
 
 })()
