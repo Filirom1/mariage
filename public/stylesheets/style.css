@@ -40,7 +40,7 @@ h4 {
 .col {
   color: #82888a;
   width: 50%;
-  height: 330px;
+  height: 370px;
   margin-bottom: 10px;
   -webkit-filter: grayscale(0%);
   -webkit-transition: 0.5s ease-in-out;
@@ -134,5 +134,8 @@ h4 {
 @media screen and (min-width: 1080px) {
   #main {
     max-width: 680px;
+  }
+  .col {
+    height: 300px;
   }
 }
