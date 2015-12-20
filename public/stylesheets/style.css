@@ -10,7 +10,6 @@
   font-family: 'Helvetica';
 }
 #main {
-  max-width: 680px;
   margin: 0 auto;
 }
 h1 a {
@@ -29,7 +28,8 @@ h4 {
   display: inline-block;
   vertical-align: text-top;
 }
-.left {
+.left,
+.right {
   width: 100%;
 }
 .right {
@@ -131,15 +131,8 @@ h4 {
   text-align: center;
   height: 500px;
 }
-@media screen and (orientation: portrait) {
-  .left,
-  .right {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 800px) {
-  .left,
-  .right {
-    width: 100%;
+@media screen and (min-width: 1080px) {
+  #main {
+    max-width: 680px;
   }
 }
