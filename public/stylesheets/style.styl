@@ -2,31 +2,42 @@ gray_dark = rgb(86, 90, 92)
 gray_light = rgb(130, 136, 138)
 gray_background =  rgb(247, 247, 247)
 
+@font-face 
+  font-family: 'HandWritten'
+  src: url('/fonts/HandWritten.woff') format('woff'), url('HandWritten.ttf') format('truetype')
+
 *
   box-sizing border-box
   -moz-box-sizing border-box
   -webkit-box-sizing border-box
-
-body
-  font 14px  Cookie, Arial, Helvetica, sans-serif;
+  color gray_dark
+  font-family 'Helvetica'
 
 #main
-  max-width: 1515px;
+  max-width: 680px;
   margin: 0 auto; 
 
-h1
+h1 a
   color gray_dark
+  font-size: 60px;
+  font-weight: normal;
+  font-family 'HandWritten', sans-serif;
+
+h4 {
+    font-weight: normal;
+    font-style: italic;
+}
 
 .left, .right, .col
   display inline-block
   vertical-align text-top
 
 .left
-  width 62%
+  width 100%
 
 .right
-  width 38%
-  height 100%
+  width 100%
+  height 100px
   padding-left 5px
 
 .col
@@ -105,6 +116,24 @@ h1
 #directions
   background  gray_background
 
+.desc
+  margin: auto;
+  width: 300px;
+  text-align: center;
+
+.nous
+  max-width: 300px
+  display block
+  margin: auto
+
+.index, .info
+  border-top: dashed 2px
+  background:url(/images/robe-droite.png) no-repeat right top, 
+  url(/images/costume-gauche.png) no-repeat left top;
+
+.info
+  text-align: center
+  height: 500px
 
 @media screen and (orientation : portrait) 
   .left, .right

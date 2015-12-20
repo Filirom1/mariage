@@ -1,5 +1,5 @@
 .header-basic-light{
-  padding: 20px 40px;
+  padding: 20px 0px;
   box-sizing:border-box;
   height: 80px;
   background-color: #fff;
@@ -15,7 +15,7 @@
 
 .header-basic-light .header-limiter h1{
   float: left;
-  font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+  font-size: 28px;
   line-height: 40px;
   margin: 0;
 }
@@ -32,7 +32,7 @@
 }
 
 .header-basic-light .header-limiter nav{
-  font:15px Arial, Helvetica, sans-serif;
+  font-size:15px;
   line-height: 40px;
   float: right;
 }

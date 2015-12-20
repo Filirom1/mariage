@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  .rooms
+    .left
+      .col.ibis
+        .card
+          .side-a
+            img(src= "images/resize_ibis.jpg")
+            .name Hotel Ibis - La Terrasse
+            .address Ibis, 35 Place Massenet, 42000 Saint-Étienne
+            .booking 
+              a(href= "http://www.ibis.com/fr/hotel-0801-ibis-saint-etienne-la-terrasse/index.shtml") Reservation en ligne
+            .price 67€ la chambre
+          .side-b
+      .col.f1
+        .card
+          .side-a
+            img(src= "images/resize_f1.jpg")
+            .name Hotel Formule 1 - La Grand Croix
+            .address 235, rue de la Peronnière, 42320 Grand Croix
+            .booking 
+              a(href= "http://www.hotelf1.com/fr/hotel-2428-formule-1-hotelf1-saint-etienne-est-la-grand-croix/location.shtml") Reservation en ligne
+            .price 36€ la chambre
+          .side-b
+      .col.gite
+        .card
+          .side-a
+            img(src= "images/resize_gite.jpg")
+            .name Gite Communal de St Christo
+            .address Saint Christo en Jarez
+            .booking Si vous voulez réserver contactez Coco et Roro
+            .price 13€ par personne + 3,50€ de draps si besoin
+          .side-b
+      .col.fontanes
+        .card
+          .side-a
+            img(src= "images/resize_cave.jpg")
+            .name Cave du Chateau de Fontanes
+            .address Chateau de Fontanes
+            .booking Pas de réservation, mais prévoyez juste un matelas gonflable + sac de couchage
+            .price 0€
+          .side-b
+            p Vous n'avez même pas besoin de prendre la voiture, vous logez sur place :-)
+            p Par contre n'oubliez pas votre matelas et votre sac de couchage.
+    .right
+      #map
+      #directions
+
+  script(src="/javascripts/map.js")
+  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwkeEgSWP_RsnynqhY_qkc_g-GZYXAcvo&callback=initMap")
